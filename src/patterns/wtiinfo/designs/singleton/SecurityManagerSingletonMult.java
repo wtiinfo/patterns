@@ -1,4 +1,4 @@
-package patterns.wtiinfo.designs.patterns;
+package patterns.wtiinfo.designs.singleton;
 
 public class SecurityManagerSingletonMult {
 

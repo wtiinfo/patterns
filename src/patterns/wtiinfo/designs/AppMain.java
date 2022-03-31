@@ -1,15 +1,22 @@
 package patterns.wtiinfo.designs;
 
-import patterns.wtiinfo.designs.patterns.SecurityManagerSingleton;
+import patterns.wtiinfo.designs.factorymethod.TypeShape;
+import patterns.wtiinfo.designs.factorymethod.TypeShapeFactory;
+import patterns.wtiinfo.designs.factorymethod.gui.Window;
+import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 
 public class AppMain {
 
 	public static void main(String[] args) {
-		SecurityManagerSingleton sms1 = SecurityManagerSingleton.getInstance();
-		sms1.imprimirObj();
+		SecurityManagerSingleton sms = SecurityManagerSingleton.getInstance();
+		sms.imprimirObj();
 		
-		SecurityManagerSingleton sms2 = SecurityManagerSingleton.getInstance();
-		sms2.imprimirObj();
+		Window w = new Window("Type Shape: FactoryMethod", 300, 300);
+		w.show();
+		
+		TypeShape shape = TypeShapeFactory.newShape();
+		
+		w.drawShape(shape);
 	}
 
 }
