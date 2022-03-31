@@ -1,5 +1,6 @@
 package patterns.wtiinfo.designs;
 
+import patterns.wtiinfo.designs.factorymethod.Type;
 import patterns.wtiinfo.designs.factorymethod.TypeShape;
 import patterns.wtiinfo.designs.factorymethod.TypeShapeFactory;
 import patterns.wtiinfo.designs.factorymethod.gui.Window;
@@ -15,8 +16,10 @@ public class AppMain {
 		w.show();
 		
 		TypeShape shape = TypeShapeFactory.newShape();
+		TypeShape shape2 = TypeShapeFactory.newShape(2);
+		TypeShape shape3 = TypeShapeFactory.newShape(Type.SQUARE);
 		
-		w.drawShape(shape);
+		w.drawShape(shape3);
 	}
 
 }
