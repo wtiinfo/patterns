@@ -6,7 +6,10 @@ import patterns.wtiinfo.designs.abstractfactory.TypeShapeFactoryProducer;
 import patterns.wtiinfo.designs.adapter.MicroSDClassAdapter;
 import patterns.wtiinfo.designs.adapter.MicroSDObjectAdapter;
 import patterns.wtiinfo.designs.adapter.USB;
-import patterns.wtiinfo.designs.factorymethod.gui.Window;
+import patterns.wtiinfo.designs.composite.Rectangle;
+import patterns.wtiinfo.designs.composite.SceneGroupComposite;
+import patterns.wtiinfo.designs.composite.Triangle;
+import patterns.wtiinfo.designs.gui.Window;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 
 public class AppMain {
@@ -32,7 +35,25 @@ public class AppMain {
 		usb.setBytes((byte) 20);
 		MicroSDObjectAdapter object = new MicroSDObjectAdapter(usb);
 		System.out.println(object.getBytes());
-		System.out.println(usb.getBytes());
+		System.out.println(usb.getBytes() + "\n");
+		
+		SceneGroupComposite groupRoot = new SceneGroupComposite();
+		SceneGroupComposite groupOne = new SceneGroupComposite();
+		SceneGroupComposite groupTwo = new SceneGroupComposite();
+		
+		groupRoot.add(new Triangle());
+		groupRoot.add(groupOne);
+		
+		groupOne.add(new Triangle());
+		groupOne.add(new Rectangle());
+		
+		groupTwo.add(new Rectangle());
+		groupTwo.add(new Rectangle());
+		
+		groupOne.add(groupTwo);
+		
+		groupRoot.draw();
+		
 	}
 
 }

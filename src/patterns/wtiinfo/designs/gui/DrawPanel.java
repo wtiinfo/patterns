@@ -1,4 +1,4 @@
-package patterns.wtiinfo.designs.factorymethod.gui;
+package patterns.wtiinfo.designs.gui;
 
 import java.awt.Graphics;
 
