@@ -19,7 +19,7 @@ public class AppMain {
 		TypeShape shape2 = TypeShapeFactory.newShape(2);
 		TypeShape shape3 = TypeShapeFactory.newShape(Type.SQUARE);
 		
-		w.drawShape(shape3);
+		w.drawShape(shape);
 	}
 
 }
