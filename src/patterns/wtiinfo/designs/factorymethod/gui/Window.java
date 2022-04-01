@@ -2,7 +2,7 @@ package patterns.wtiinfo.designs.factorymethod.gui;
 
 import javax.swing.JFrame;
 
-import patterns.wtiinfo.designs.factorymethod.TypeShape;
+import patterns.wtiinfo.designs.abstractfactory.TypeShape;
 
 public class Window {
 

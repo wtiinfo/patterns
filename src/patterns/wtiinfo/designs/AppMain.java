@@ -1,8 +1,8 @@
 package patterns.wtiinfo.designs;
 
-import patterns.wtiinfo.designs.factorymethod.Type;
-import patterns.wtiinfo.designs.factorymethod.TypeShape;
-import patterns.wtiinfo.designs.factorymethod.TypeShapeFactory;
+import patterns.wtiinfo.designs.abstractfactory.TypeShape;
+import patterns.wtiinfo.designs.abstractfactory.TypeShapeAbstractFactory;
+import patterns.wtiinfo.designs.abstractfactory.TypeShapeFactoryProducer;
 import patterns.wtiinfo.designs.factorymethod.gui.Window;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 
@@ -12,12 +12,11 @@ public class AppMain {
 		SecurityManagerSingleton sms = SecurityManagerSingleton.getInstance();
 		sms.imprimirObj();
 		
-		Window w = new Window("Type Shape: FactoryMethod", 300, 300);
+		Window w = new Window("Type Shape: Abstract Factory", 400, 400);
 		w.show();
 		
-		TypeShape shape = TypeShapeFactory.newShape();
-		TypeShape shape2 = TypeShapeFactory.newShape(2);
-		TypeShape shape3 = TypeShapeFactory.newShape(Type.SQUARE);
+		TypeShapeAbstractFactory factory = TypeShapeFactoryProducer.getFactory(false);
+		TypeShape shape = factory.newShape("circle");
 		
 		w.drawShape(shape);
 	}

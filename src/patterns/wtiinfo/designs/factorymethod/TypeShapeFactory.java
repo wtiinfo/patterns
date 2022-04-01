@@ -21,9 +21,8 @@ public class TypeShapeFactory {
 			return new Circle();
 		} else if(i == 2) {
 			return new Square();
-		} else {
-			return null;
-		}
+		} 
+		return null;	
 	}
 	
 	public static TypeShape newShape(Type type) {
@@ -31,9 +30,7 @@ public class TypeShapeFactory {
 			return new Circle();
 		} else if(type.getValue().equals("quadrado")) {
 			return new Square();
-		} else {
-			return null;
 		}
+		return null;	
 	}
-
 }

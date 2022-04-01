@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import patterns.wtiinfo.designs.factorymethod.TypeShape;
+import patterns.wtiinfo.designs.abstractfactory.TypeShape;
 
 @SuppressWarnings("serial")
 public class DrawPanel extends JPanel {
@@ -22,4 +22,5 @@ public class DrawPanel extends JPanel {
 			shape.draw(g);
 		}
 	}
+
 }
