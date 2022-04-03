@@ -13,6 +13,7 @@ import patterns.wtiinfo.designs.composite.SceneGroupComposite;
 import patterns.wtiinfo.designs.composite.Triangle;
 import patterns.wtiinfo.designs.decorator.Circle;
 import patterns.wtiinfo.designs.decorator.ColorShape;
+import patterns.wtiinfo.designs.decorator.DashLineShape;
 import patterns.wtiinfo.designs.decorator.Shape;
 import patterns.wtiinfo.designs.decorator.Square;
 import patterns.wtiinfo.designs.gui.Window;
@@ -62,7 +63,7 @@ public class AppMain {
 		
 		System.out.println();
 		
-		Shape shapeDec = new ColorShape(new Circle(), Color.BLUE);
+		Shape shapeDec = new DashLineShape(new ColorShape(new Square(), Color.GREEN));
 		w.drawShape(shapeDec);
 		
 	}
