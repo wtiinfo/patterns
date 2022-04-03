@@ -1,5 +1,7 @@
 package patterns.wtiinfo.designs;
 
+import java.awt.Color;
+
 import patterns.wtiinfo.designs.abstractfactory.TypeShape;
 import patterns.wtiinfo.designs.abstractfactory.TypeShapeAbstractFactory;
 import patterns.wtiinfo.designs.abstractfactory.TypeShapeFactoryProducer;
@@ -9,6 +11,10 @@ import patterns.wtiinfo.designs.adapter.USB;
 import patterns.wtiinfo.designs.composite.Rectangle;
 import patterns.wtiinfo.designs.composite.SceneGroupComposite;
 import patterns.wtiinfo.designs.composite.Triangle;
+import patterns.wtiinfo.designs.decorator.Circle;
+import patterns.wtiinfo.designs.decorator.ColorShape;
+import patterns.wtiinfo.designs.decorator.Shape;
+import patterns.wtiinfo.designs.decorator.Square;
 import patterns.wtiinfo.designs.gui.Window;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 
@@ -24,7 +30,7 @@ public class AppMain {
 		TypeShapeAbstractFactory factory = TypeShapeFactoryProducer.getFactory(false);
 		TypeShape shape = factory.newShape("circle");
 		
-		w.drawShape(shape);
+		//w.drawShape(shape);
 		
 		MicroSDClassAdapter  adapter = new MicroSDClassAdapter();
 		adapter.setBytes((byte) 10);
@@ -53,6 +59,11 @@ public class AppMain {
 		groupOne.add(groupTwo);
 		
 		groupRoot.draw();
+		
+		System.out.println();
+		
+		Shape shapeDec = new ColorShape(new Circle(), Color.BLUE);
+		w.drawShape(shapeDec);
 		
 	}
 

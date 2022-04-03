@@ -3,6 +3,7 @@ package patterns.wtiinfo.designs.gui;
 import javax.swing.JFrame;
 
 import patterns.wtiinfo.designs.abstractfactory.TypeShape;
+import patterns.wtiinfo.designs.decorator.Shape;
 
 public class Window {
 
@@ -26,6 +27,10 @@ public class Window {
 	
 	public void drawShape(TypeShape shape) {
 		drawPanel.drawShape(shape);
+	}
+	
+	public void drawShape(Shape shape) {
+		drawPanel.drawShapeDecorator(shape);
 	}
 	
 }

@@ -1,0 +1,23 @@
+package patterns.wtiinfo.designs.decorator;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class ColorShape extends ShapeDecorator {
+
+	private Color color;
+	
+	public ColorShape(Shape shape, Color color) {
+		super(shape);
+		this.color = color;
+	}
+	
+	@Override
+	public void draw(Graphics g) {
+		Graphics gCopy = g.create();// Copia de segurança por poder afetar outros objetos devido ao setColor
+		gCopy.setColor(color);
+		super.draw(gCopy);
+		gCopy.dispose();// Descartando a copia de Graphics
+	}
+
+}
