@@ -17,6 +17,9 @@ import patterns.wtiinfo.designs.decorator.DashLineShape;
 import patterns.wtiinfo.designs.decorator.Shape;
 import patterns.wtiinfo.designs.decorator.Square;
 import patterns.wtiinfo.designs.gui.Window;
+import patterns.wtiinfo.designs.observer.ConsoleObserver;
+import patterns.wtiinfo.designs.observer.WeatherForecast;
+import patterns.wtiinfo.designs.observer.WindowApp;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 
 public class AppMain {
@@ -65,6 +68,12 @@ public class AppMain {
 		
 		Shape shapeDec = new DashLineShape(new ColorShape(new Square(), Color.GREEN));
 		w.drawShape(shapeDec);
+		
+		ConsoleObserver observer = new ConsoleObserver();
+		WeatherForecast.getInstance().registerObserver(observer);
+		
+		WindowApp app = new WindowApp("Observer", 300, 200);
+		app.show();
 		
 	}
 
