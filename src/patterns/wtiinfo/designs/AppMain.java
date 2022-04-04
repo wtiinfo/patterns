@@ -22,6 +22,8 @@ import patterns.wtiinfo.designs.observer.WindowApp;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
 import patterns.wtiinfo.designs.strategy.Person;
 import patterns.wtiinfo.designs.strategy.WalkMovement;
+import patterns.wtiinfo.designs.templatemethod.ChaMatte;
+import patterns.wtiinfo.designs.templatemethod.Suco;
 
 public class AppMain {
 
@@ -76,8 +78,18 @@ public class AppMain {
 		WindowApp app = new WindowApp("Observer", 300, 200);
 		app.show();
 		
+		Suco suco = new Suco();
+		suco.preparar();
+		
+		System.out.println();
+		
+		ChaMatte cha = new ChaMatte();
+		cha.preparar();
+		
+		System.out.println();
+		
 		Person p = new Person("Wando");
-		p.move(new WalkMovement(), 100);
+		p.move(new WalkMovement(), 50);
 		
 	}
 
