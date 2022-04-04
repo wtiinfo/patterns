@@ -11,7 +11,6 @@ import patterns.wtiinfo.designs.adapter.USB;
 import patterns.wtiinfo.designs.composite.Rectangle;
 import patterns.wtiinfo.designs.composite.SceneGroupComposite;
 import patterns.wtiinfo.designs.composite.Triangle;
-import patterns.wtiinfo.designs.decorator.Circle;
 import patterns.wtiinfo.designs.decorator.ColorShape;
 import patterns.wtiinfo.designs.decorator.DashLineShape;
 import patterns.wtiinfo.designs.decorator.Shape;
@@ -21,6 +20,8 @@ import patterns.wtiinfo.designs.observer.ConsoleObserver;
 import patterns.wtiinfo.designs.observer.WeatherForecast;
 import patterns.wtiinfo.designs.observer.WindowApp;
 import patterns.wtiinfo.designs.singleton.SecurityManagerSingleton;
+import patterns.wtiinfo.designs.strategy.Person;
+import patterns.wtiinfo.designs.strategy.WalkMovement;
 
 public class AppMain {
 
@@ -74,6 +75,9 @@ public class AppMain {
 		
 		WindowApp app = new WindowApp("Observer", 300, 200);
 		app.show();
+		
+		Person p = new Person("Wando");
+		p.move(new WalkMovement(), 100);
 		
 	}
 
